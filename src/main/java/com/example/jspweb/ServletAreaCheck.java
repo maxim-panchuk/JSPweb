@@ -24,6 +24,7 @@ public class ServletAreaCheck extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         this.servletContext = config.getServletContext();
         this.storage = new Storage();
+
     }
 
 
@@ -34,21 +35,22 @@ public class ServletAreaCheck extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        lastDotsList.clear();
         HttpSession session = request.getSession();
+        session.setAttribute("currentR", 3);
         String body = getBody(request);
         if (!body.equals("")) {
             JSONArray jsonArray = new JSONArray(body);
 
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
-
             for (Object item : jsonArray) {
                 RequestObject requestObject = gson.fromJson(item.toString(), RequestObject.class);
                 Parameters parameters = new Parameters(requestObject);
                 setResults(parameters);
+                SvgUpdater.currentR = parameters.r;
             }
-            session.setAttribute("lastDots", lastDotsList);
+
+            session.setAttribute("lastDots", storage.getStore());
             session.setAttribute("dots", storage.getStore());
         } else {
             lastDotsList.clear();
@@ -105,7 +107,6 @@ public class ServletAreaCheck extends HttpServlet {
 
         serverResponse = new ServerResponse(x, y, r, currentTime, execTime, bool);
         LastDots lastDot = new LastDots(serverResponse);
-        lastDotsList.add(lastDot);
 
         storage.addToStore(serverResponse);
         rows.append(toJson(serverResponse));

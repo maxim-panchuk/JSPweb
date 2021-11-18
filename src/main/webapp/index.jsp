@@ -85,7 +85,7 @@
                 <text class="coordinates-text" x="335" y="167">X</text>
 
                 <%
-                    SvgUpdater svgUpdater = new SvgUpdater((ArrayList<LastDots>) session.getAttribute("lastDots"));
+                    SvgUpdater svgUpdater = new SvgUpdater((ArrayList<ServerResponse>) session.getAttribute("lastDots"));
                 %>
                 <%=
                     svgUpdater.toString()

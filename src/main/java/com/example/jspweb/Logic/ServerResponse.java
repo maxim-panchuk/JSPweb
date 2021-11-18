@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class ServerResponse implements Serializable {
 
-    Double x;
-    Double y;
-    Double r;
-    String currentTime;
-    String execTime;
-    boolean bool;
+    public Double x;
+    public Double y;
+    public Double r;
+    public String currentTime;
+    public String execTime;
+    public boolean bool;
 
     public ServerResponse (Double x, Double y, Double r, String currentTime, String execTime, boolean bool) {
         this.x = x;
