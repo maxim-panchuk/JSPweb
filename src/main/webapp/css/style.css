@@ -1,0 +1,100 @@
+.coordinate-axis, .coordinates-marker {
+    stroke: #17171a;
+    stroke-width:2
+}
+
+.coordinates-figure {
+    fill: #6c757d;
+}
+
+.svg-coordinates {
+    margin-top: 100px;
+}
+
+.content-class {
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: antiquewhite;
+}
+
+.btn-params {
+    border-radius: 15px;
+    width: 160px;
+    height: 60px;
+    margin-left: 25px;
+    margin-top: 150px;
+    color: #eee;
+    background-color: #17171a;
+    border: 0px;
+}
+
+.btn-params:hover {
+    animation: bounce 1s;
+    color: #000;
+    background-color: #737381;
+}
+
+.sidebar-text {
+    margin-left: 33px;
+    margin-top: 10px;
+    font-size: small;
+}
+
+.x-selector {
+    margin-left: 30px;
+}
+
+.btn-toolbar {
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.y-selector {
+    margin-top: 20px;
+}
+
+#inputY {
+    width: 250px;
+}
+
+.buttons > .btn{
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color:#6c757d;
+    border: 0px;
+    border-radius: 10px;
+
+}
+
+.btn-outline-primary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-primary:hover {
+    color: #eee;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-primary:active {
+    background-color: #000;
+}
+
+
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    80% {
+        transform: translateY(-5px);
+    }
+}
